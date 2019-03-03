@@ -9,13 +9,13 @@
 
     <title>{{ config('app.name', 'Laravel') }}</title>
 
-    <!-- Scripts -->
-    <script src="{{ asset('js/app.js') }}" defer></script>
+        <!-- Scripts -->
+        <script src="{{ asset('js/app.js') }}" defer></script>
 
     <!-- Fonts -->
     <link rel="dns-prefetch" href="//fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet" type="text/css">
-
+    <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
 </head>
@@ -79,12 +79,20 @@
               @if(Auth::check())
               <div class="col-lg-4">
                     <ul class="list-group">
-                        <li class="list-group-item"><a href="/home">Home</a></li>
+                        <li class="list-group-item"><a href="{{route('home')}}">Home</a></li>
+                        <li class="list-group-item"><a href="{{route('categories')}}">Categories</a></li>
+                        <li class="list-group-item"><a href="{{route('tags')}}">Tags</a></li>
+                        <li class="list-group-item"><a href="{{route('tag.create')}}">Create new Tag</a></li>
+                        <li class="list-group-item"><a href="{{route('posts')}}">All Posts</a></li>
+                        <li class="list-group-item"><a href="{{route('posts.trashed')}}">Trashed Posts</a></li>
+                        <li class="list-group-item"><a href="{{route('category.create')}}">Create new Category</a></li>
                         <li class="list-group-item"><a href="{{route('post.create')}}">Create New Post</a></li>
                     </ul>
                 </div>
               @endif
             <div class="col-lg-8">
+
+            @include('modal')
             @yield('content')
             </div>
                 
@@ -93,5 +101,16 @@
            
         </main>
     </div>
+    
+
+    <!-- Bootstrap js -->
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+        <script type="text/javascript">
+        $(window).on('load',function(){
+            $('#myModal').modal('show');
+        });
+    </script>
+
 </body>
 </html>
