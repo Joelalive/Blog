@@ -53,7 +53,7 @@ Edit Post : {{$post->title}}
 </div>
 <div class="form-group">
 <label for="content">Content</label>
-<textarea name="content" id="" cols="5" rows="5" class="form-control">{{ $post->content }}</textarea>
+<textarea name="content" id="mytextarea" cols="5" rows="5" class="form-control">{{ $post->content }}</textarea>
 </div>
 <div class="form-group">
     <div class="text-center">
@@ -65,4 +65,17 @@ Edit Post : {{$post->title}}
 </div>
 
 
+@endsection
+
+@section('styles')
+
+@endsection
+
+@section('scripts')
+<script src="https://cloud.tinymce.com/5/tinymce.min.js?apiKey=your_API_key"></script>
+<script>
+  tinymce.init({
+    selector: '#mytextarea'
+  });
+  </script>
 @endsection

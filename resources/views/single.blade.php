@@ -50,8 +50,8 @@
 
                         <div class="post__content-info">
 
-                        <p class="post__text">{!! $post->content !!}
-                            </p>
+                        {!! $post->content !!}
+                    
                        
 
                             <div class="widget w-tags">
