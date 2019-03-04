@@ -16,10 +16,10 @@
 @foreach($tags as $tag)
 <tr>
 <td>{{$tag->tag}}</td>
-<td><a href="{{ route('tag.edit',['tag'=> $tag->id]) }}" class="btn btn-xs btn-info">
+<td><a href="{{ route('tag.edit',['tag'=> $tag->id]) }}" class="btn btn-sm btn-info">
 <i class="fa fa-edit"></i>
 </a></td>
-<td><a href="{{route('tag.delete',['tag'=> $tag->id])}}" class="btn btn-xs btn-danger">
+<td><a href="{{route('tag.delete',['tag'=> $tag->id])}}" class="btn btn-sm btn-danger">
 <i class="fa fa-trash"></i>
 </a></td>
 <td></td>

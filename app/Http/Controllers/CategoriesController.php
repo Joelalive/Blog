@@ -97,6 +97,9 @@ class CategoriesController extends Controller
      */
     public function destroy(Category $category)
     {
+        foreach($category->posts as $post){
+            $post->forceDelete();
+        }
         $category->delete();
         session()->flash('success', 'You have deleted the category !');
         return redirect()->route('categories');

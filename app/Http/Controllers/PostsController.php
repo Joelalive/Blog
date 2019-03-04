@@ -37,6 +37,13 @@ class PostsController extends Controller
             session()->flash('warning','You need to create a category first!');
             return back();
         }
+
+        if($tags->isEmpty())
+        {
+            session()->flash('warning','You need to create a Tags first!');
+            return back();
+        }
+
         return view('admin.posts.create',compact('categories','tags'));
     }
 

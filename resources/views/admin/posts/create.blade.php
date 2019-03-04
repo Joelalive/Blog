@@ -43,7 +43,7 @@ Create New Post
 
 <div class="form-group">
 <label for="content">Content</label>
-<textarea name="content" id="" cols="5" rows="5" class="form-control"></textarea>
+<textarea name="content" id="content" cols="5" rows="5" class="form-control"></textarea>
 </div>
 <div class="form-group">
     <div class="text-center">
@@ -55,4 +55,17 @@ Create New Post
 </div>
 
 
+@endsection
+
+@section('styles')
+<link href="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.css" rel="stylesheet">
+@endsection
+
+@section('scripts')
+<script src="http://cdnjs.cloudflare.com/ajax/libs/summernote/0.8.11/summernote.js"></script>
+<script type="text/javascript">
+$(document).ready(function() {
+  $('#content').summernote();
+});
+</script>
 @endsection

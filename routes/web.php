@@ -14,12 +14,12 @@ use App\Http\Controllers\TagsController;
 */
 
 Route::get('/test', function(){
-    return App\Tag::find(2)->post;
+    return App\Category::all();
 });
 
-Route::get('/', function () {
-    return view('welcome');
-});
+Route::get('/', 'FrontendController@index')->name('index');
+
+Route::get('/post/{slug}', 'FrontendController@singlePost')->name('post.single');
 
 Auth::routes();
 
@@ -70,5 +70,24 @@ Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
     Route::get('/tag/delete/{tag}', 'TagsController@destroy')->name('tag.delete');
 
+    Route::get('/users', 'Userscontroller@index')->name('users');
+
+    Route::get('/user/create', 'Userscontroller@create')->name('user.create');
+
+    Route::post('/user/store', 'Userscontroller@store')->name('user.store');
+
+    Route::get('/user/delete/{user}', 'Userscontroller@destroy')->name('user.delete');
+
+    Route::get('/user/admin/{user}', 'Userscontroller@admin')->name('user.admin');
+
+    Route::get('/user/not-admin/{user}', 'Userscontroller@not_admin')->name('user.not.admin');
+
+    Route::get('/user/profile', 'ProfilesController@index')->name('user.profile');
+
+    Route::post('/user/profile/update', 'ProfilesController@update')->name('user.profile.update');
+
+    Route::get('/settings', 'SettingsController@index')->name('settings');
+
+    Route::post('/settings/update', 'SettingsController@update')->name('settings.update');
 
 });

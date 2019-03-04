@@ -22,10 +22,10 @@
 <td><a href="" class="btn btn-xs btn-info">
 <i class="fa fa-edit"></i>
 </a></td>
-<td><a href="{{route('post.restore',['post' => $post->id])}}" class="btn btn-xs btn-success">
+<td><a href="{{route('post.restore',['post' => $post->id])}}" class="btn btn-sm btn-success">
 <i class="fa fa-undo"></i>
 </a></td>
-<td><a href="{{route('post.kill',['post' => $post->id])}}" class="btn btn-xs btn-danger">
+<td><a href="{{route('post.kill',['post' => $post->id])}}" class="btn btn-sm btn-danger">
 <i class="fa fa-trash"></i>
 </a></td>
 <td></td>

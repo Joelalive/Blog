@@ -18,10 +18,10 @@
 <tr>
 <td><img src="{{$post->featured}}" alt="{{$post->title}}" width="70px" height="50px"></td>
 <td>{{$post->title}}</td>
-<td><a href="{{route('post.edit',['post' => $post->id])}}" class="btn btn-xs btn-info">
+<td><a href="{{route('post.edit',['post' => $post->id])}}" class="btn btn-sm btn-info">
 <i class="fa fa-edit"></i>
 </a></td>
-<td><a href="{{route('post.delete',['post' => $post->id])}}" class="btn btn-xs btn-danger">
+<td><a href="{{route('post.delete',['post' => $post->id])}}" class="btn btn-sm btn-danger">
 <i class="fa fa-trash-o"></i>
 </a></td>
 <td></td>
