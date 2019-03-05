@@ -17,6 +17,7 @@
     <link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
     <!-- Styles -->
     <link href="{{ asset('css/app.css') }}" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/css/toastr.min.css" rel="stylesheet"/>
     @yield('styles')
 
 </head>
@@ -101,7 +102,6 @@
               @endif
             <div class="col-lg-8">
 
-            @include('modal')
             @yield('content')
             </div>
                 
@@ -113,14 +113,31 @@
     
 
     <!-- Bootstrap js -->
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-        <script type="text/javascript">
-        $(window).on('load',function(){
-            $('#myModal').modal('show');
-        });
-    </script>
     <script src="{{ asset('js/app.js') }}" defer></script>
+    <script src="http://code.jquery.com/jquery-1.9.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/toastr.js/latest/js/toastr.min.js"></script>
+    <script>
+   
+    $(document).ready(function() {
+
+    // show when page load
+    @if(session('success'))
+       toastr.success('{{session('success')}}');
+    @endif
+
+    @if(session('warning'))
+       toastr.info('{{session('warning')}}');
+    @endif
+
+    $('#linkButton').click(function() {
+       // show when the button is clicked
+       toastr.success('Click Button');
+
+    });
+
+});
+    
+    </script>
     @yield('scripts')
 </body>
 </html>
