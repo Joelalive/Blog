@@ -17,7 +17,7 @@ Create New Post
 </div>
 <div class="form-group">
 <label for="featured">Featured Image</label>
-<input type="file" name="featured" id="" class="form-control">
+<input type="file" name="featured" id="" class="form-control-file">
 </div>
 
 <div class="form-group">

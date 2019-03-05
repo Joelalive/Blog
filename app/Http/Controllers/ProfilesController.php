@@ -77,6 +77,7 @@ class ProfilesController extends Controller
             'email' =>  'required|email',
             'facebook' =>  'required|url',
             'youtube' =>  'required|url',
+            'about' =>  'required',
         ]);
 
         $user = Auth::user();
@@ -103,6 +104,8 @@ class ProfilesController extends Controller
 
         $user->profile->youtube = $request->youtube;
 
+        $user->profile->about = $request->about;
+
         $user->save();
 
         $user->profile->save();
@@ -114,7 +117,7 @@ class ProfilesController extends Controller
             $user->save();
         }
 
-        session()->flash('success', 'Your Profile Updated.');
+        session()->flash('success', 'Your Profile is Updated.');
 
         Return back();
     }

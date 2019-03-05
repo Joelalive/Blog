@@ -17,9 +17,16 @@ Route::get('/test', function(){
     return App\Category::all();
 });
 
+Route::get('/category/{category}', 'FrontendController@category')->name('category.single');
+
+Route::get('/tag/{tag}', 'FrontendController@tag')->name('tag.single');
+
 Route::get('/', 'FrontendController@index')->name('index');
 
 Route::get('/post/{slug}', 'FrontendController@singlePost')->name('post.single');
+
+Route::get('/results', 'FrontendController@results')->name('results');
+
 
 Auth::routes();
 
