@@ -16,10 +16,10 @@
 @foreach($categories as $category)
 <tr>
 <td>{{$category->name}}</td>
-<td><a href="{{ route('category.edit',['category'=> $category->id]) }}" class="btn btn-xs btn-info">
+<td><a href="{{ route('category.edit',['category'=> $category->id]) }}" class="btn btn-sm btn-info">
 <i class="fa fa-edit"></i>
 </a></td>
-<td><a href="{{route('category.delete',['category'=> $category->id])}}" class="btn btn-xs btn-danger">
+<td><a href="{{route('category.delete',['category'=> $category->id])}}" class="btn btn-sm btn-danger">
 <i class="fa fa-trash"></i>
 </a></td>
 <td></td>

@@ -33,7 +33,7 @@ Auth::routes();
 
 Route::group(['prefix' => 'admin', 'middleware' => 'auth'], function(){
 
-    Route::get('/home', 'HomeController@index')->name('home');
+    Route::get('/dashboard', 'HomeController@index')->name('home');
 
     Route::get('/category/create' , 'CategoriesController@create')->name('category.create');
 

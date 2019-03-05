@@ -19,7 +19,7 @@
 <tr>
 <td><img src="{{$post->featured}}" alt="{{$post->title}}" width="90px" height="50px"></td>
 <td>{{$post->title}}</td>
-<td><a href="" class="btn btn-xs btn-info">
+<td><a href="" class="btn btn-sm btn-info">
 <i class="fa fa-edit"></i>
 </a></td>
 <td><a href="{{route('post.restore',['post' => $post->id])}}" class="btn btn-sm btn-success">
